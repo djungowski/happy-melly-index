@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+require_once 'config.php';
 
 $options = getopt('f:');
 if (!isset($options['f'])) {
