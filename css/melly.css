@@ -1,0 +1,53 @@
+body {
+	background-color: #369;
+	color: #fff;
+	font-family: "droid-sans-1", "droid-sans-2", "Lucida Grande",
+		"Lucida Sans Unicode", tahoma, verdana, arial, sans-serif;
+	font-size: 14px;
+}
+
+h1, form {
+	background-color: #036;
+}
+
+form {
+	padding: 0 6px 6px;
+}
+
+p {
+	padding: 6px;
+}
+
+h1 {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	padding: 6px;
+}
+
+label {
+	display: block;
+	margin-bottom: 6px;
+}
+
+select, input {
+	padding: 6px;
+	border: 1px solid #369;
+	font-size: 14px;
+}
+
+select {
+	width: 100%;
+}
+
+input {
+	width: 97%;
+}
+
+p.final-price {
+	display: none;
+}
+
+span.final-price {
+	font-weight: bold
+}
