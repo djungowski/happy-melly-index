@@ -17,8 +17,8 @@
 		</p>
 
 		<p>
-			<label>What is your price?</label>
-			<input type="text" name="origin-price" id="origin-price" />
+			<label>What is your price? (in <span id="currency"></span>)</label>
+			<input type="text" name="origin-price" id="origin-price" value="1000" />
 		</p>
 
 		<p>
@@ -28,9 +28,21 @@
 
 		<p class="final-price">
 			<span>Happy Melly Index suggests a price of</span>
-			<span class="final-price">bla</span>
+			<span class="final-price"></span>
+			<span class="final-currency"></span>
 		</p>
 	</form>
+
+	<script type="text/javascript">
+	$('select[name="origin"]').on('change', function(event) {
+		var index,
+			country;
+
+		index = $(event.target).find('option:selected').val();
+		country = window.happyMellyIndex[index];
+		$('#currency').html(country['currency']);
+	});
+	</script>
 
 	<script type="text/javascript">
 		var selects,
@@ -40,6 +52,9 @@
 		selects = $('select');
 		for (var index in window.happyMellyIndex) {
 			country = window.happyMellyIndex[index];
+			if (index == 0) {
+				$('#currency').html(country['currency']);
+			}
 			option = $('<option value="' + index + '">' + country['name'] + '</option>');
 			selects.append(option);
 		}
