@@ -26,12 +26,36 @@
 			<select name="destination"></select>
 		</p>
 
-		<p class="final-price">
+		<p>
 			<span>Happy Melly Index suggests a price of</span>
-			<span class="final-price"></span>
-			<span class="final-currency"></span>
+			<span id="final-price"></span>
+			<span id="final-currency"></span>
 		</p>
 	</form>
+	<script type="text/javascript">
+	var updateFinalPrice = function() {
+		var price,
+			currency,
+			origin,
+			originIndex,
+			originPrice,
+			destination,
+			destinationIndex,
+			destinationPrice;
+
+		originIndex = $('select[name="origin"] option:selected').val();
+		destinationIndex = $('select[name="destination"] option:selected').val();
+		origin = window.happyMellyIndex[originIndex];
+		destination = window.happyMellyIndex[destinationIndex];
+
+		originPrice = $('#origin-price').val();
+
+		destinationPrice = Math.round(originPrice / origin['ratio'] * destination['ratio']);
+
+		$('#final-currency').html(destination['currency']);
+		$('#final-price').html(destinationPrice);
+	};
+	</script>
 
 	<script type="text/javascript">
 	$('select[name="origin"]').on('change', function(event) {
@@ -41,7 +65,10 @@
 		index = $(event.target).find('option:selected').val();
 		country = window.happyMellyIndex[index];
 		$('#currency').html(country['currency']);
+		updateFinalPrice();
 	});
+	$('select[name="destination"]').on('change', updateFinalPrice);
+	$('#origin-price').on('keyup', updateFinalPrice);
 	</script>
 
 	<script type="text/javascript">
@@ -58,6 +85,7 @@
 			option = $('<option value="' + index + '">' + country['name'] + '</option>');
 			selects.append(option);
 		}
+		updateFinalPrice();
 	</script>
 </body>
 </html>

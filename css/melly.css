@@ -44,10 +44,6 @@ input {
 	width: 97%;
 }
 
-p.final-price {
-	display: none;
-}
-
-span.final-price {
+#final-price, #final-currency {
 	font-weight: bold
 }
