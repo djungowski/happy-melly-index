@@ -8,3 +8,7 @@ if (!isset($options['f'])) {
 	exit(1);
 }
 $indexFilename = $options['f'];
+
+// Create DB Connection
+$dsn = sprintf('mysql:dbname=%s;host=%s', $mysql['dbname'], $mysql['host']);
+$db = new PDO($dsn, $mysql['user'], $mysql['password']);
