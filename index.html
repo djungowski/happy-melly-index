@@ -13,8 +13,7 @@
 	<form action="">
 		<p>
 			<label>Where do you live in?</label>
-			<select name="origin">
-			</select>
+			<select name="origin"></select>
 		</p>
 
 		<p>
@@ -24,8 +23,7 @@
 
 		<p>
 			<label>What is your destination country?</label>
-			<select name="destination">
-			</select>
+			<select name="destination"></select>
 		</p>
 
 		<p class="final-price">
@@ -33,5 +31,19 @@
 			<span class="final-price">bla</span>
 		</p>
 	</form>
+
+	<script type="text/javascript">
+		var selects,
+			option,
+			country;
+
+		selects = $('select');
+		console.log(selects);
+		for (var index in window.happyMellyIndex) {
+			country = window.happyMellyIndex[index];
+			option = $('<option value="' + index + '">' + country['name'] + '</option>');
+			selects.append(option);
+		}
+	</script>
 </body>
 </html>
