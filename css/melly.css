@@ -1,13 +1,17 @@
+@font-face {  
+  font-family: kg_skinny_latteregular ;
+  src: url('../font/KGSkinnyLatte.ttf') format("truetype");  
+}  
+
 body {
-	background-color: #369;
+	background-color: #fff;
 	color: #fff;
-	font-family: "droid-sans-1", "droid-sans-2", "Lucida Grande",
-		"Lucida Sans Unicode", tahoma, verdana, arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 14px;
 }
 
 h1, form {
-	background-color: #036;
+	background-color: #48b170;
 }
 
 form {
@@ -19,7 +23,9 @@ p {
 }
 
 h1 {
-	text-align: center;
+	font-family: kg_skinny_latteregular, sans-serif;
+	text-transform: uppercase;
+	text-align: left;
 	font-size: 28px;
 	font-weight: bold;
 	padding: 6px;
@@ -42,6 +48,16 @@ select {
 
 input {
 	width: 97%;
+}
+
+#happy-melly-header {
+	height: 80px;
+}
+
+#happy-melly-header img {
+	position: absolute;
+	top: 0px;
+	right: 8px;
 }
 
 #final-price, #final-currency {
