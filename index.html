@@ -12,7 +12,7 @@
 <body>
 	<h1>Happy Melly Index</h1>
 
-	<form action="">
+	<form action="" method="get" id="happy-melly-index-form">
 		<p>
 			<label>Where do you live in?</label>
 			<select name="origin"></select>
@@ -21,6 +21,7 @@
 		<p>
 			<label>What is your price? (in <span id="currency"></span>)</label>
 			<input type="text" name="origin-price" id="origin-price" value="1000" />
+			<span id="origin-price-error">Please enter a valid price (eg 1000)</span>
 		</p>
 
 		<p>

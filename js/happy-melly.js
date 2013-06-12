@@ -6,14 +6,23 @@ var updateFinalPrice = function() {
 		originPrice,
 		destination,
 		destinationIndex,
-		destinationPrice;
+		destinationPrice,
+		originPriceError;
 
 	originIndex = $('select[name="origin"] option:selected').val();
 	destinationIndex = $('select[name="destination"] option:selected').val();
 	origin = window.happyMellyIndex[originIndex];
 	destination = window.happyMellyIndex[destinationIndex];
+	originPriceError = $('#origin-price-error');
 
-	originPrice = $('#origin-price').val();
+	originPrice =  parseInt($('#origin-price').val());
+	// If something crappy was given: use 0
+	if (isNaN(originPrice)) {
+		originPrice = 0;
+		originPriceError.show(100);
+	} else {
+		originPriceError.hide(100);
+	}
 
 	destinationPrice = Math.round(originPrice / origin['ratio'] * destination['ratio']);
 
@@ -33,6 +42,9 @@ var bootstrapMelly = function() {
 	});
 	$('select[name="destination"]').on('change', updateFinalPrice);
 	$('#origin-price').on('keyup', updateFinalPrice);
+	$('#happy-melly-index-form').on('submit', function(event) {
+		event.preventDefault();
+	});
 
 	var selects,
 		option,

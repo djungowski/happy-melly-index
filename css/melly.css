@@ -47,3 +47,9 @@ input {
 #final-price, #final-currency {
 	font-weight: bold
 }
+
+#origin-price-error {
+	display: none;
+	background-color: #AA0000;
+	padding: 3px;
+}
