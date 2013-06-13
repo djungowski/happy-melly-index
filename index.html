@@ -10,38 +10,40 @@
     <script type="text/javascript" src="js/happy-melly.js"></script>
 </head>
 <body>
-	<div id="happy-melly-header">
-		<img src="img/happy-melly-logo.png" />
-		<h1>Happy Melly Index</h1>
+	<div id="happy-melly-index">
+		<div id="happy-melly-header">
+			<img src="img/happy-melly-logo.png" />
+			<h1>Happy Melly Index</h1>
+		</div>
+
+		<form action="" method="get" id="happy-melly-index-form">
+			<p>
+				<label>Where do you live in?</label>
+				<select name="origin"></select>
+			</p>
+
+			<p>
+				<label>What is your price? (in <span id="currency"></span>)</label>
+				<input type="text" name="origin-price" id="origin-price" value="1000" />
+				<span id="origin-price-error">Please enter a valid price (eg 1000)</span>
+			</p>
+
+			<p>
+				<label>What is your destination country?</label>
+				<select name="destination"></select>
+			</p>
+
+			<p>
+				<span>Happy Melly Index suggests a price of</span>
+				<span id="final-price"></span>
+				<span id="final-currency"></span>
+			</p>
+
+			<p id="happy-melly-feedback">
+				Please send feedback to index<span class="null">null</span>@happymelly.com
+			</p>
+		</form>
 	</div>
-
-	<form action="" method="get" id="happy-melly-index-form">
-		<p>
-			<label>Where do you live in?</label>
-			<select name="origin"></select>
-		</p>
-
-		<p>
-			<label>What is your price? (in <span id="currency"></span>)</label>
-			<input type="text" name="origin-price" id="origin-price" value="1000" />
-			<span id="origin-price-error">Please enter a valid price (eg 1000)</span>
-		</p>
-
-		<p>
-			<label>What is your destination country?</label>
-			<select name="destination"></select>
-		</p>
-
-		<p>
-			<span>Happy Melly Index suggests a price of</span>
-			<span id="final-price"></span>
-			<span id="final-currency"></span>
-		</p>
-
-		<p id="happy-melly-feedback">
-			Please send feedback to index<span class="null">null</span>@happymelly.com
-		</p>
-	</form>
 	<script type="text/javascript">bootstrapMelly();</script>
 </body>
 </html>

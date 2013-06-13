@@ -54,6 +54,11 @@ input {
 	display: none;
 }
 
+#happy-melly-index {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
 #happy-melly-feedback {
 	text-align: right;
 	border-top: 1px solid #fff;
@@ -66,7 +71,10 @@ input {
 #happy-melly-header img {
 	position: absolute;
 	top: 0px;
-	right: 8px;
+}
+
+#happy-melly-header h1 {
+	text-align: right;
 }
 
 #final-price, #final-currency {
