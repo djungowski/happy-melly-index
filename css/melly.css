@@ -50,6 +50,14 @@ input {
 	width: 97%;
 }
 
+.null {
+	display: none;
+}
+
+#happy-melly-feedback {
+	text-align: right;
+}
+
 #happy-melly-header {
 	height: 80px;
 }
@@ -61,7 +69,7 @@ input {
 }
 
 #final-price, #final-currency {
-	font-weight: bold
+	font-weight: bold;
 }
 
 #origin-price-error {
