@@ -59,6 +59,26 @@ input {
 	margin: 0 auto;
 }
 
+#happy-melly-navigation {
+	text-align: right;
+}
+
+#happy-melly-navigation a {
+	color: #48b170;
+	text-decoration: none;
+}
+
+#happy-melly-about {
+	color: #000;
+	position: relative;
+	background: #fff;
+	border: 1px solid #000;
+	margin-top: 15px;
+	padding: 10px;
+	color: #48b170;
+	display: none;
+}
+
 #happy-melly-feedback {
 	text-align: right;
 	border-top: 1px solid #fff;
@@ -74,7 +94,7 @@ input {
 }
 
 #happy-melly-header h1 {
-	text-align: right;
+	text-align: right; 
 }
 
 #final-price, #final-currency {

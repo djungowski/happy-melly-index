@@ -30,6 +30,18 @@ var updateFinalPrice = function() {
 	$('#final-price').html(destinationPrice);
 };
 
+var bootstrapAbout = function() {
+	var aboutLink,
+		aboutParagraph;
+
+	aboutLink = $('#happy-melly-navigation a[href="#about"]');
+	aboutParagraph = $('#happy-melly-about');
+
+	aboutLink.on('click', function() {
+		aboutParagraph.slideToggle(400);
+	});
+};
+
 var bootstrapMelly = function() {
 	$('select[name="origin"]').on('change', function(event) {
 		var index,
@@ -59,5 +71,6 @@ var bootstrapMelly = function() {
 		option = $('<option value="' + index + '">' + country['name'] + '</option>');
 		selects.append(option);
 	}
+	bootstrapAbout();
 	updateFinalPrice();
 };
